@@ -22,6 +22,36 @@ void BCDSevenSegment_Initialization(void){
 	DIO_SetPinDirection(PORTB,Pin3,DIO_Output);
 }
 
+/* Function to write a number on one of the 7 segments */
+void BCDSevenSegment_WriteNumberAndSelect(uint8 Value, BCDSevenSegment_Pos Select7Seg)
+{
+	BCDSevenSegment_Disable1();
+	BCDSevenSegment_Disable2();
+
+	if(Value < 10)
+	{
+		/* Input Value to decoder (A, B, C, D) */
+		/* Value of decoder input A */
+		DIO_SetPinValue(PORTA, Pin4, GET_BIT(Value,0));
+		/* Value of decoder input B */
+		DIO_SetPinValue(PORTA, Pin5, GET_BIT(Value,1));
+		/* Value of decoder input C */
+		DIO_SetPinValue(PORTA, Pin6, GET_BIT(Value,2));
+		/* Value of decoder input D */
+		DIO_SetPinValue(PORTA, Pin7, GET_BIT(Value,3));
+
+		switch(Select7Seg)
+		{
+		case Left7Seg:
+			BCDSevenSegment_Enable1();
+			break;
+		case Right7Seg:
+			BCDSevenSegment_Enable2();
+		}
+	}
+
+
+}
 /* Function to write a number on 7 segment */
 void BCDSevenSegment_WriteNumber(uint8 Value)
 {

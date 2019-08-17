@@ -10,11 +10,17 @@
 
 #include "../../MCAL/DIO/DIO.h"
 
+typedef enum
+{
+	Left7Seg,
+	Right7Seg
+} BCDSevenSegment_Pos;
+
 /* Function to initialize 7Segment component */
 void BCDSevenSegment_Initialization(void);
 
 /* Function to write a number on one of the 7 segments */
-void BCDSevenSegment_WriteNumberAndSelect(uint8 Value, uint8 Select7Seg);
+void BCDSevenSegment_WriteNumberAndSelect(uint8 Value, BCDSevenSegment_Pos Select7Seg);
 /* Function to write a number on 7 segment */
 void BCDSevenSegment_WriteNumber(uint8 Value);
 /* Function to enable 7segment 1 */

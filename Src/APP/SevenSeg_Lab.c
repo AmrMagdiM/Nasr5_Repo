@@ -12,6 +12,6 @@ void SevenSeg(void)
 	BCDSevenSegment_Initialization();
 
 	/* Write 8 on 7segement */
-	BCDSevenSegment_WriteNumber(3);
+	BCDSevenSegment_WriteNumberAndSelect(5,Left7Seg);
 
 }
