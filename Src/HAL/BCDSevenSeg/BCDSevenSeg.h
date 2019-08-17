@@ -1,0 +1,29 @@
+/*
+ * BCDSevenSeg.h
+ *
+ *  Created on: Aug 17, 2019
+ *      Author: Amr
+ */
+
+#ifndef SRC_HAL_BCDSEVENSEG_BCDSEVENSEG_H_
+#define SRC_HAL_BCDSEVENSEG_BCDSEVENSEG_H_
+
+#include "../../MCAL/DIO/DIO.h"
+
+/* Function to initialize 7Segment component */
+void BCDSevenSegment_Initialization(void);
+
+/* Function to write a number on one of the 7 segments */
+void BCDSevenSegment_WriteNumberAndSelect(uint8 Value, uint8 Select7Seg);
+/* Function to write a number on 7 segment */
+void BCDSevenSegment_WriteNumber(uint8 Value);
+/* Function to enable 7segment 1 */
+void BCDSevenSegment_Enable1(void);
+/* Function to enable 7segment 2 */
+void BCDSevenSegment_Enable2(void);
+/* Function to disable 7segment 1 */
+void BCDSevenSegment_Disable1(void);
+/* Function to disable 7segment 2 */
+void BCDSevenSegment_Disable2(void);
+
+#endif /* SRC_HAL_BCDSEVENSEG_BCDSEVENSEG_H_ */
