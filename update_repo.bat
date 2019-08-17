@@ -1,3 +1,3 @@
 git checkout .
-git pull
+git pull .
 pause
