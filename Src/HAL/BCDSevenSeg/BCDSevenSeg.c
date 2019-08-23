@@ -4,7 +4,7 @@
  *  Created on: Aug 17, 2019
  *      Author: Amr
  */
-#include <avr/delay.h>
+
 #include "../../LIB/Bit_Math.h"
 #include "BCDSevenSeg.h"
 
@@ -55,61 +55,18 @@ void BCDSevenSegment_WriteNumberAndSelect(uint8 Value, BCDSevenSegment_Pos Selec
 /* Function to write a number on 7 segment */
 void BCDSevenSegment_WriteNumber(uint8 Value)
 {
-	uint8 SevenSegOne, SevenSegTwo;
-
-	if (Value < 100){
-
-		/* 53 / 10 = 5 */
-		SevenSegOne = Value / 10;
-		/* 53 % 10 = 3*/
-		SevenSegTwo = Value % 10;
-
-		/* Disable seven segment 1 */
-		BCDSevenSegment_Disable1();
-		/* Disable seven segment 2 */
-		BCDSevenSegment_Disable2();
-
-		/* 5 --> 0b 0000 0101 (bit7 bit6 bit5  .. bit0) --> A = 1, B = 0, C = 1, D = 0 */
-		/* Input Value to decoder (A, B, C, D) */
-		/* Value of decoder input A */
-		DIO_SetPinValue(PORTA, Pin4, GET_BIT(SevenSegOne,0));
-		/* Value of decoder input B */
-		DIO_SetPinValue(PORTA, Pin5, GET_BIT(SevenSegOne,1));
-		/* Value of decoder input C */
-		DIO_SetPinValue(PORTA, Pin6, GET_BIT(SevenSegOne,2));
-		/* Value of decoder input D */
-		DIO_SetPinValue(PORTA, Pin7, GET_BIT(SevenSegOne,3));
-
-		/* Enable seven segment 1 */
-		BCDSevenSegment_Enable1();
-
-		/* 10 mSec delay */
-		_delay_ms(10);
-
-		/* Disable seven segment 1 */
-		BCDSevenSegment_Disable1();
-
+	if (Value < 10){
 		/* 3 --> 0b 0000 0011 (bit7 bit6 bit5  .. bit0) --> A = 1, B = 1, C = 0, D = 0 */
 		/* Input Value to decoder (A, B, C, D) */
 		/* Value of decoder input A */
-		DIO_SetPinValue(PORTA, Pin4, GET_BIT(SevenSegTwo,0));
+		DIO_SetPinValue(PORTA, Pin4, GET_BIT(Value,0));
 		/* Value of decoder input B */
-		DIO_SetPinValue(PORTA, Pin5, GET_BIT(SevenSegTwo,1));
+		DIO_SetPinValue(PORTA, Pin5, GET_BIT(Value,1));
 		/* Value of decoder input C */
-		DIO_SetPinValue(PORTA, Pin6, GET_BIT(SevenSegTwo,2));
+		DIO_SetPinValue(PORTA, Pin6, GET_BIT(Value,2));
 		/* Value of decoder input D */
-		DIO_SetPinValue(PORTA, Pin7, GET_BIT(SevenSegTwo,3));
-
-		/* Enable seven segment 2 */
-		BCDSevenSegment_Enable2();
-
-		/* 10 mSec delay */
-		_delay_ms(10);
-
-
-
+		DIO_SetPinValue(PORTA, Pin7, GET_BIT(Value,3));
 	}
-
 }
 
 /* Function to enable 7segment 1 */
