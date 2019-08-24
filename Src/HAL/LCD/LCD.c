@@ -186,21 +186,32 @@ void LCD_WriteString(uint8* Str, uint8 Row, uint8 Col)
 
 void LCD_StoreCustomChr(uint8* Ptr2CustomChr, uint8 CGRAM_Index)
 {
-
+	uint8 index;
 	if(CGRAM_Index < 8)
 	{
 		/* Make AC points to CGRAM address*/
 		/* Use command "Set CGRAM Address" */
+		/* 0b01------ */
+		/* Moved to CGRAM block */
+		LCD_WriteCmd((0x40)|(CGRAM_Index*8));
+		for(index = 0; index <8; index++)
+		{
+			/* Write in one CGRAM block */
+			/* AC increments automatically */
+			LCD_WriteData(Ptr2CustomChr[index]);
+		}
 
 		/* Return to DDRAM */
-
+		/* Write "Return Home" command (0b00000010) */
+		LCD_WriteCmd(0x02);
 	}
 }
 
 void LCD_DisplayCustomChr(uint8 CGRAM_Index, uint8 Row, uint8 Col)
 {
 	/* Go to selected position */
+	LCD_GoToPos(Row, Col);
 
 	/* Write selected character from CGRAM */
-
+	LCD_WriteData(CGRAM_Index);
 }

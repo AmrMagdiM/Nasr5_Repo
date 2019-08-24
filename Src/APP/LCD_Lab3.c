@@ -1,14 +1,15 @@
 /*
- * LCD_Lab2.c
+ * LCD_Lab3.c
  *
  *  Created on: Aug 24, 2019
  *      Author: Amr
  */
+
 #include "../MCAL/DIO/DIO.h"
 #include "../HAL/LCD/LCD.h"
 
 
-void LCD_Lab2(void)
+void LCD_Lab3(void)
 {
 	/* Initialization */
 	/* Set direction of LCD pins to be output */
@@ -18,7 +19,10 @@ void LCD_Lab2(void)
 	/* Start initialization sequence for LCD */
 	LCD_Initialize();
 
-	LCD_WriteString("Ali", 1, 4);
+	/* pattern for 7arf el alif */
+	uint8 pattern[8] = {0x0E, 0x08, 0x1E, 0x00, 0x04, 0x04, 0x04, 0x04};
+	LCD_StoreCustomChr(pattern, 0);
+	LCD_DisplayCustomChr(0,0,5);
 
 }
 
