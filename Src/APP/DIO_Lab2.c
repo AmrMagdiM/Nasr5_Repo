@@ -7,7 +7,7 @@
 
 #include "../MCAL/DIO/DIO.h"
 
-void DIO_LAP2(void)
+void DIO_Lab2(void)
 {
 	/* Check the switch (button2)[PIND2] if pressed --> turn on led0[PINC2] */
 

@@ -52,7 +52,6 @@ void SevenSeg_POV(void)
 				/* 10 mSec delay */
 				_delay_ms(10);
 			}
-			Value++;
 		}
 	}
 
