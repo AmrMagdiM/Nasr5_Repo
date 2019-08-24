@@ -157,14 +157,30 @@ void LCD_GoToPos(uint8 Row, uint8 Col)
 {
 	/* Move AC to selected position in DDRAM */
 	/* Use command "Set DDRAM Address" */
-
+	uint8 Address;
+	/* Limit address to supported range (visible window) */
+	if(Row < 2 && Col < 16)
+	{
+		Address = ( (Row * 0x40) + Col);
+		SET_BIT(Address,7);
+		LCD_WriteCmd(Address);
+	}
 }
 
 void LCD_WriteString(uint8* Str, uint8 Row, uint8 Col)
 {
 	/* Move AC to selected position in DDRAM */
+	LCD_GoToPos(Row, Col);
 
 	/* Write string */
+	/* Extract elements from array */
+	uint8 index = 0;
+	/* while I didn't find the termination character */
+	while((Str[index] != '\0') && ((Col+index) <16)){
+		LCD_WriteData(Str[index]);
+		index++;
+	}
+	/* Pass each element to LCD_WriteData*/
 
 }
 
