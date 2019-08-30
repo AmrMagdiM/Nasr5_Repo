@@ -106,3 +106,15 @@ void EXTI_Initialization(void)
 
 }
 
+
+/* Function to enable EXTI 0 ISR */
+void EXTI_EnableInt0(void)
+{
+	SET_BIT(GICR_Reg,6);
+}
+
+/* Function to disable EXTI 0 ISR */
+void EXTI_DisableInt0(void)
+{
+	CLEAR_BIT(GICR_Reg,6);
+}
