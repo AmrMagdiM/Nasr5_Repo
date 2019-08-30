@@ -10,7 +10,7 @@
 #include "../MCAL/GIE/GIE.h"
 #include <util/delay.h>
 
-void Func(void);
+void EXTI_ISR(void);
 
 void EXTI_Lab(void)
 {
@@ -23,7 +23,7 @@ void EXTI_Lab(void)
 	DIO_SetPinDirection(PORTD,Pin3,DIO_Output);
 
 	EXTI_Initialization();
-	EXTI_SetCallback(Func);
+	EXTI_SetCallback(EXTI_ISR);
 
 	/* Enable PIE for INT0 */
 	EXTI_EnableInt0();
@@ -42,7 +42,7 @@ void EXTI_Lab(void)
 	}
 }
 
-void Func(void)
+void EXTI_ISR(void)
 {
 	/* Turn on buzzer */
 	DIO_SetPinValue(PORTA,Pin3,STD_HIGH);

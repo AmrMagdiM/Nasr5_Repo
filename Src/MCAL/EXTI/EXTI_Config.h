@@ -18,7 +18,7 @@
  *
  * */
 
-#define EXTI0_MODE	EXTI_RISING
+#define EXTI0_MODE	EXTI_LOW_LEVEL
 
 /* Configure the external interrupt 1 mode
  * Range:
