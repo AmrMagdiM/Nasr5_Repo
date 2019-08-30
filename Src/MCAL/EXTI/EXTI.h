@@ -17,4 +17,7 @@ void EXTI_EnableInt0(void);
 /* Function to disable EXTI 0 ISR */
 void EXTI_DisableInt0(void);
 
+/* */
+void EXTI_SetCallback( void (*CopyFuncPtr) (void) );
+
 #endif /* SRC_MCAL_EXTI_EXTI_H_ */

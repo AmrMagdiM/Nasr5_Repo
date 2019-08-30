@@ -12,6 +12,11 @@
 #include "EXTI_Config.h"
 #include "EXTI.h"
 
+/* Define pointer to function */
+void (*CallbackPtr) (void) = NULL;
+
+
+
 void EXTI_Initialization(void)
 {
 /**************** Clearing all source modes ********************/
@@ -118,3 +123,20 @@ void EXTI_DisableInt0(void)
 {
 	CLEAR_BIT(GICR_Reg,6);
 }
+
+void EXTI_SetCallback( void (*CopyFuncPtr) (void) )
+{
+	CallbackPtr = CopyFuncPtr;
+}
+
+void __vector_1(void) __attribute__((signal, used));
+/* Definition of ISR of INT0 */
+void __vector_1(void)
+{
+	if(CallbackPtr != NULL)
+	{
+		CallbackPtr();
+	}
+	/* Pass address of function in APP */
+}
+

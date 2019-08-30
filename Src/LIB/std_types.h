@@ -24,4 +24,6 @@ typedef enum
 	STD_HIGH /* 1 */
 } STD_levelType;
 
+
+#define NULL 	0
 #endif /* NASR5_REPO_SRC_LIB_STD_TYPES_H_ */
