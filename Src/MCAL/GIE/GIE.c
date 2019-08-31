@@ -12,8 +12,8 @@
 
 #include "GIE_reg.h"
 #include "GIE_types.h"
-#include "GIE_Config.h"
 #include "GIE.h"
+#include "GIE_config.h"
 
 
 /* Function to enable global interrupt */

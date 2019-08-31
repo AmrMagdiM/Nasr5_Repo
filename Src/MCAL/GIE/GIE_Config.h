@@ -1,5 +1,5 @@
 /*
- * GIE_Config.h
+ * GIE_config.h
  *
  *  Created on: Aug 24, 2019
  *      Author: Amr

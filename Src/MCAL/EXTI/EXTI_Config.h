@@ -1,5 +1,5 @@
 /*
- * EXTI_Config.h
+ * EXTI_config.h
  *
  *  Created on: Aug 24, 2019
  *      Author: Amr

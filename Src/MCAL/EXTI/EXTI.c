@@ -9,8 +9,8 @@
 
 #include "EXTI_reg.h"
 #include "EXTI_types.h"
-#include "EXTI_Config.h"
 #include "EXTI.h"
+#include "EXTI_config.h"
 
 /* Define pointer to function */
 void (*CallbackPtr) (void) = NULL;
