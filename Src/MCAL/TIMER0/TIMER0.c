@@ -10,10 +10,10 @@
 #include "../../LIB/Bit_Math.h"
 
 
-#include "TIMER_reg.h"
-#include "TIMER.h"
-#include "TIMER_types.h"
-#include "TIMER_Config.h"
+#include "TIMER0_reg.h"
+#include "TIMER0.h"
+#include "TIMER0_types.h"
+#include "TIMER0_Config.h"
 
 static void(*CallIntComp)(void)=NULL;
 static void(*CallIntOver)(void)=NULL;
