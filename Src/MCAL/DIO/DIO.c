@@ -1,7 +1,9 @@
 #include "../../LIB/Bit_Math.h"
-#include "DIO.h"
-#include "DIO_reg.h"
+#include "../../LIB/std_types.h"
 
+#include "DIO_reg.h"
+#include "DIO_types.h"
+#include "DIO.h"
 /* Function to set the direction of a port */
 void DIO_SetPortDirection (DIO_PortType PortId, DIO_Direction PortDirection)
 {

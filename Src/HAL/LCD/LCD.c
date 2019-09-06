@@ -6,7 +6,10 @@
  */
 /* Inclusion list */
 #include "../../LIB/Bit_Math.h"
+#include "../../LIB/std_types.h"
+
 #include "../../MCAL/DIO/DIO.h"
+
 #include "LCD_Config.h"
 #include "LCD.h"
 #include <util/delay.h>
@@ -45,7 +48,7 @@ void LCD_Initialize(void)
 	/******* Display Control **********/
 	LCD_WriteCmd(0x00);
 	/* 0b 1111 0000 == 1 <Display ON/OFF> <Cursor ON/OFF> <Cursor Blink> x x x x */
-	LCD_WriteCmd(0xF0);
+	LCD_WriteCmd(0xC0);
 	/**********************************/
 
 	/** Delay after Display Control ***/

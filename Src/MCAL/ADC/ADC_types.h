@@ -8,18 +8,6 @@
 #ifndef SRC_MCAL_ADC_ADC_TYPES_H_
 #define SRC_MCAL_ADC_ADC_TYPES_H_
 
-typedef enum
-{
-    ADC_Channel_0,
-    ADC_Channel_1,
-    ADC_Channel_2,
-    ADC_Channel_3,
-    ADC_Channel_4,
-    ADC_Channel_5,
-    ADC_Channel_6,
-    ADC_Channel_7,
-
-}ADC_ChannelType;
 
 /* Mask to clear the voltage reference bits specified by 1 */
 #define ADC_VOLTAGE_REF_clr_msk                     0b00111111

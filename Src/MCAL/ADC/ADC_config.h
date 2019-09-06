@@ -27,7 +27,7 @@
  * ADC_MODE_SINGLE_CONVERSION
  *
  * */
-#define ADC_MODE_SELECTOR                        ADC_MODE_SINGLE_CONVERSION
+#define ADC_MODE_SELECTOR                        ADC_MODE_AUTO_TRIGGER
 
 /*
  * Configure the ADC adjustment
@@ -49,7 +49,7 @@
  * ADC_PRESCALER_64_msk
  * ADC_PRESCALER_128_msk
  * */
-#define ADC_PRESCALER_SELECTOR_msk                ADC_PRESCALER_64_msk
+#define ADC_PRESCALER_SELECTOR_msk                ADC_PRESCALER_128_msk
 
 /*
  * Configure the ADC trigger source

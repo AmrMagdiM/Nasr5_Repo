@@ -1,5 +1,5 @@
 /*
- * DIO_reg.h
+ * DIO_types.h
  *
  *  Created on: Aug 16, 2019
  *      Author: Amr

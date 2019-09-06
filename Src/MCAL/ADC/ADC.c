@@ -11,17 +11,17 @@
 
 #include "ADC_reg.h"
 #include "ADC_types.h"
-#include "ADC.h"
 #include "ADC_config.h"
+#include "ADC.h"
 
 static void(*ADC_CallBack)(void) = NULL;
 
-void ADC_Initialize(void)
+extern void ADC_Initialize(void)
 {
 /**************** Selecting voltage reference ******************/
 /***************************************************************/
-    ADMUX_Reg &= ADC_VOLTAGE_REF_clr_msk;
-    ADMUX_Reg |= ADC_VOLTAGE_REF_SELECTOR_msk;
+    ADMUX_Reg = ADMUX_Reg & ADC_VOLTAGE_REF_clr_msk;
+    ADMUX_Reg = ADMUX_Reg | ADC_VOLTAGE_REF_SELECTOR_msk;
 /***************************************************************/
 
 /******************** Selecting ADC Mode ***********************/

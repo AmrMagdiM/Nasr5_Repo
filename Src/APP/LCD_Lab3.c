@@ -4,6 +4,7 @@
  *  Created on: Aug 24, 2019
  *      Author: Amr
  */
+#include "../LIB/std_types.h"
 
 #include "../MCAL/DIO/DIO.h"
 #include "../HAL/LCD/LCD.h"
