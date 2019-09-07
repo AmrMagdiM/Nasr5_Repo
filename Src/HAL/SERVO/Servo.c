@@ -36,7 +36,7 @@ void TIME2_CTC_ISR(void)
 	{
 		TIM2_SetCompValue(Ton_Steps);
 		DIO_SetPinValue(PORTD, Pin7, STD_HIGH);
-		Periods_Counter = 0;;
+		Periods_Counter = 0;
 	}
 	else
 	{
