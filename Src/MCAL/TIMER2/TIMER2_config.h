@@ -17,7 +17,7 @@
  Fast_PWM
 
  */
-#define SIGNAL_MODE                     Normal_Mode
+#define SIGNAL_MODE                     CTC
 
 /****************************************************/
 
@@ -47,6 +47,6 @@
  Clk_1024
 
  */
-#define CLOCK_Prescaler                  Clk_64
+#define CLOCK_Prescaler                  Clk_128
 
 #endif /* SRC_MCAL_TIMER2_TIMER2_CONFIG_H_ */
