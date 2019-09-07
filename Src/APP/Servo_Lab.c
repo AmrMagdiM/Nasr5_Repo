@@ -12,7 +12,7 @@
 #include "../MCAL/GIE/GIE.h"
 #include "../MCAL/TIMER2/TIMER2.h"
 
-#define T_ON		1xs 0	//NO. of overflows
+#define T_ON		10	//NO. of overflows
 #define T_TOTAL		200
 
 volatile uint8 OV_Counter = 0;
