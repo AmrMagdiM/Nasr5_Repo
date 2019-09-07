@@ -26,4 +26,5 @@ typedef enum
 
 
 #define NULL 	0
+
 #endif /* NASR5_REPO_SRC_LIB_STD_TYPES_H_ */

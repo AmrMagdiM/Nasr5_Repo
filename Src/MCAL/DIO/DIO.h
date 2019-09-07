@@ -20,6 +20,8 @@ void DIO_SetPinValue (DIO_PortType PortId, DIO_PinNumber PinId, STD_levelType Pi
 /* Function to read value of specific pin in a port */
 STD_levelType DIO_GetPinValue (DIO_PortType PortId, DIO_PinNumber PinId);
 
+void DIO_TogglePin(DIO_PortType PortId, DIO_PinNumber PinId);
+
 
 
 

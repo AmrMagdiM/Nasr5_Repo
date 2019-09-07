@@ -123,6 +123,24 @@ void DIO_SetPinValue (DIO_PortType PortId, DIO_PinNumber PinId, STD_levelType Pi
 	}
 }
 
+void DIO_TogglePin(DIO_PortType PortId, DIO_PinNumber PinId)
+{
+	if((PortId <= PORTD) && (PinId <= Pin7))
+	{
+		switch(PortId)
+		{
+			case PORTA: TOGGLE_BIT(PORTA_Reg,PinId); break;
+			case PORTB: TOGGLE_BIT(PORTB_Reg,PinId); break;
+			case PORTC: TOGGLE_BIT(PORTC_Reg,PinId); break;
+			case PORTD: TOGGLE_BIT(PORTD_Reg,PinId); break;
+		}
+	}
+	else
+	{
+		/* Do nothing, wrong port or pin selection */
+	}
+}
+
 /* Function to read value of specific pin in a port */
 STD_levelType DIO_GetPinValue (DIO_PortType PortId, DIO_PinNumber PinId)
 {

@@ -17,8 +17,12 @@
 #define CTC                        0b00001000
 #define Fast_PWM                   0b01001000
 /************************************************/
-#define NULL                       0
-
+/* Compare Output Mode */
+#define OC0_DISCONNECTED		   	0b00000000
+#define OC0_TOGGLE_ON_COMPARE_MATCH	0b00010000
+#define OC0_CLEAR_ON_COMPARE_MATCH	0b00100000
+#define OC0_SET_ON_COMPARE_MATCH	0b00110000
+ /************************************************/
 /*Prescaler Modes*/
 #define No_Clock_Stop              0
 #define ClkIo                      1

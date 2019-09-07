@@ -20,6 +20,19 @@
 #define SIGNAL_MODE                     Normal_Mode
 /****************************************************/
 
+/*
+ COMPARE_OUTPUT_MODE CHOICES:-
+
+ OC0_DISCONNECTED
+ OC0_TOGGLE_ON_COMPARE_MATCH
+ OC0_CLEAR_ON_COMPARE_MATCH
+ OC0_SET_ON_COMPARE_MATCH
+
+ */
+
+#define COMPARE_OUTPUT_MODE            OC0_DISCONNECTED
+/****************************************************/
+
 /* CLOCK_TYPES_Prescalers CHOICES :-
 No_Clock_Stop
 ClkIo
@@ -31,5 +44,5 @@ Ext_clk_FallingEdge
 Ext_clk_RisingEdge
  */
 
-#define CLOCK_Prescaler                  Clk_64
+#define CLOCK_Prescaler                  Clk_1024
 #endif /* DRIVERS_MAIN_REPO_NASR5_REPO_SRC_MCAL_TIMER_TIMER_CONFIG_H_ */
