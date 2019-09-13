@@ -1,0 +1,58 @@
+/*
+ * UART_config.h
+ *
+ *  Created on: Sep 13, 2019
+ *      Author: Amr
+ */
+
+#ifndef SRC_MCAL_UART_UART_CONFIG_H_
+#define SRC_MCAL_UART_UART_CONFIG_H_
+
+/*
+ * MODE_SELECT options:
+ *
+ * UART_ASYNCHRONOUS
+ * UART_SYNCHRONOUS
+ *
+ * */
+
+#define UART_MODE_SELECT	UART_SYNCHRONOUS
+
+/*
+ * Parity_Mode options:
+ *
+ * UART_PARITY_DISABLED
+ * UART_PARITY_EVEN
+ * UART_PARITY_ODD
+ *
+ * */
+
+#define UART_PARITY_SELECT	UART_PARITY_DISABLED
+
+/*
+ * Stop_bit options:
+ *
+ * UART_STOP_BIT_ONE
+ * UART_STOP_BIT_TWO
+ *
+ * */
+
+#define UART_STOP_BIT_SELECT	UART_STOP_BIT_ONE
+
+/*
+ * Data_bits options:
+ *
+ * UART_DATA_BITS_FIVE
+ * UART_DATA_BITS_SIX
+ * UART_DATA_BITS_SEVEN
+ * UART_DATA_BITS_EIGHT
+ * UART_DATA_BITS_NINE
+ *
+ * */
+
+#define UART_DATA_BITS_SELECT	UART_DATA_BITS_EIGHT
+
+
+
+
+#endif /* SRC_MCAL_UART_UART_CONFIG_H_ */
