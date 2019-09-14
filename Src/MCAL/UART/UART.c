@@ -82,16 +82,6 @@ void UART_Initialize(void)
     /*** Enabling UART Receiver ***/
     SET_BIT(UCSRB_Reg,4);
 
-//	// Set Frame Format -> 8 data, 1 stop, No Parity
-//	UCSRC_Reg = 0x86;
-//	// Enable RX and TX
-//	UCSRB_Reg = 0x18;
-//
-//	// Set BaudRate -> 9600/12MhZ
-//
-//	UBRRH_Reg = 0;
-//	UBRRL_Reg = 103;
-
 }
 
 void UART_SendChar(uint8 Data)
