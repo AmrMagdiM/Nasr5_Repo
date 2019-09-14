@@ -16,7 +16,7 @@
  *
  * */
 
-#define UART_MODE_SELECT	UART_SYNCHRONOUS
+#define UART_MODE_SELECT            UART_ASYNCHRONOUS
 
 /*
  * Parity_Mode options:
@@ -27,7 +27,7 @@
  *
  * */
 
-#define UART_PARITY_SELECT	UART_PARITY_DISABLED
+#define UART_PARITY_SELECT          UART_PARITY_DISABLED
 
 /*
  * Stop_bit options:
@@ -37,7 +37,7 @@
  *
  * */
 
-#define UART_STOP_BIT_SELECT	UART_STOP_BIT_ONE
+#define UART_STOP_BIT_SELECT        UART_STOP_BIT_ONE
 
 /*
  * Data_bits options:
@@ -50,9 +50,18 @@
  *
  * */
 
-#define UART_DATA_BITS_SELECT	UART_DATA_BITS_EIGHT
+#define UART_DATA_BITS_SELECT       UART_DATA_BITS_EIGHT
 
+/*
+ * Refer to DATA sheet Table 70-71 Page 167-168
+ * For F_CPU 16MHz in Normal Mode:
+ * Baud Rate = 4800 ==> UBRRL = 207
+ * Baud Rate = 2400 ==> UBRRL = 103
+ * */
 
+#define UART_BAUD_RATE_UBRR_VAL     103
 
+#define UART_RX_BUFFER_SIZE         100
+#define UART_TX_BUFFER_SIZE         100
 
 #endif /* SRC_MCAL_UART_UART_CONFIG_H_ */
