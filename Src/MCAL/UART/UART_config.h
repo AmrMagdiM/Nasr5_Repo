@@ -56,7 +56,7 @@
  * Refer to DATA sheet Table 70-71 Page 167-168
  * For F_CPU 16MHz in Normal Mode:
  * Baud Rate = 4800 ==> UBRRL = 207
- * Baud Rate = 2400 ==> UBRRL = 103
+ * Baud Rate = 9600 ==> UBRRL = 103
  * */
 
 #define UART_BAUD_RATE_UBRR_VAL     103
