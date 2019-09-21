@@ -48,7 +48,7 @@ void TWI_ClearInterruptFlag(void);
 uint8 TWI_SendMsg(uint8 SlaveAddress, uint8 TxMsg[], uint8 TxMsgSize);
 
 /* Start reading operation */
-void TWI_StartReading(uint8 SlaveAddress, uint8 SizeCpy);
+void TWI_StartReading(uint8 SlaveAddress, uint8 RxMsgSize);
 
 /* Get last received message */
 uint8 TWI_GetLastRxMsg(uint8 RxMsg[], uint8* RxMsgSize);

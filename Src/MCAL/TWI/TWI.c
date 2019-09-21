@@ -92,6 +92,7 @@ void __vector_19(void)
 		case Master_Start_Condition:
 		case Master_RepeatedStart_Condition:
 			TWDR_Reg = TWI_SlaveAddr;
+			CLEAR_BIT(TWCR_Reg,5);
 			break;
 
 		case MasterTx_SlaveAddrWritebitTx_AckRx:
